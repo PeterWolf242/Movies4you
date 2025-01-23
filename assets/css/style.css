@@ -1,0 +1,226 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("./assets/fonts/OpenSans-Variable.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color_black: #0c0c0c;
+  --color_white: #fff7ec;
+  --color_creme: #f6e6cf;
+  --color_red: #e91e63;
+  --color_yellow: #ffc16a;
+  --color_green: #8cbd62;
+  --fz-regular: clamp(1.125rem, 4vw, 1.4rem);
+}
+
+html {
+ font-family: "Quicksand-Variable", sans-serif;
+}
+
+body {
+  background-color: var(--color_black);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/movie-database-bg.webp") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* * Definition der Überschriften */
+/* * "Movies for you" und "The best Movie Database" */
+h1, h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  -webkit-text-stroke: 1px var(--color_yellow);
+  font-size: clamp(3rem, 6vw, 6rem);
+  letter-spacing: 15px;
+  margin: 4rem auto 2rem auto;
+}
+
+h2 {
+  color: var(--color_yellow);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 0 auto 3rem auto;
+}
+
+/* * Hauptcontainer */
+.movie_main {
+  width: 100%;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* * Formular für die Sucheingabe und die Buttons */
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* * Oberer Bereich des Hauptcontainers */
+.search_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100vw;
+  min-width: 70vw;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* * Container für die Sortierung der Movies */
+.movie_main .btn_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* * Buttons für die Sortierung */
+.movie_main .btn_box button {
+  width: 10rem; 
+  max-width: 100%; 
+  min-width: 16rem;
+}
+
+
+/* * Suchfeld um Movies in der Datenbank zu suchen */
+input {
+  display: block;
+  width: 100%;
+  margin: 4rem auto;
+  padding: 20px 30px;
+  border-radius: 100vw;
+  font-size: var(--fz-regular);
+  outline: none;
+  border: none;
+  position: relative;
+}
+
+/* * Fehlerausgabe wenn auf den Search-Button geklickt wird aber keine Eingabe im Suchfeld erfolgt ist */
+#errormsg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 4rem 0 4rem 1rem;
+  color: var(--color_red);
+  font-size: var(--fz-regular);
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* * Design für alle Buttons */
+button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--color_black);
+  color: var(--color_yellow);
+  border: 2px solid var(--color_yellow);
+  border-radius: 100vw;
+  font-size: var(--fz-regular);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s all ease-in-out;
+}
+
+/* * Hover-Effekt für alle Buttons */
+button:hover {
+  background-color: var(--color_yellow);
+  color: var(--color_black);
+  outline: none;
+}
+
+/* * Container in dem alle Movies gelistet werden */
+#movie_container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 8rem auto;
+}
+
+/* * Einzelne Movie-Box */
+.movieBox {
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #f6e6cf40;
+  background-color: transparent;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 0 4px var(--color_creme);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: left;
+  pointer-events: none;
+}
+
+/* * Movie-Titel */
+.movieBox h3 {
+  display: inline-block;
+  width: 90%;
+  margin: 0 auto;
+  color: var(--color_green);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* * Überschrift der einzelnen Elemente der Movies */
+.movieBox .inner_highlight {
+  display: inline-block;
+  width: fit-content;
+  color: var(--color_white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-right: 20px;
+  position: relative;
+}
+
+/* * Angaben über das einzelne Movie (Erscheinungsjahr, Regisseur, Spielzeit, Kategorie und Bewertung */
+.movieBox p {
+  position: absolute;
+  right: 3rem;
+  display: inline-block;
+  color: var(--color_yellow);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 700;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .movie_main {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+
+  .movieBox {
+    width: 100vw;
+  }
+
+  .movie_main .btn_box button {
+    display: block;
+    width: 50vw;
+  }
+}
