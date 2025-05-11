@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/img/apple-touch-icon.webp"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/img/favicon-32x32.webp"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/img/favicon-16x16.webp"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script type="module" src="./assets/ts/main.ts"></script>
-    <title>Movies for you</title>
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <h1>Movies for you</h1>
-      <h2>The Best Movie Database</h2>
-      <!-- * Hauptcontainer  -->
-      <section class="movie_main">
-        <!-- * Oberer Bereich des Hauptcontainers -->
-        <section class="search_header">
-          <!-- * Formular für die Sucheingabe und die Buttons -->
-          <form action="" autocomplete="off">
-            <!-- * Suchfeld um Movies in der Datenbank zu suchen -->
-            <input type="text" name="" id="inputText" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./assets/img/apple-touch-icon.webp"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/img/favicon-32x32.webp"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./assets/img/favicon-16x16.webp"
+		/>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<script type="module" src="./main.js"></script>
+		<title>Movies for you</title>
+	</head>
+	<body>
+		<header></header>
+		<main>
+			<h1>Movies for you</h1>
+			<h2>The Best Movie Database</h2>
+			<!-- * Hauptcontainer  -->
+			<section class="movie_main">
+				<!-- * Oberer Bereich des Hauptcontainers -->
+				<section class="search_header">
+					<!-- * Formular für die Sucheingabe und die Buttons -->
+					<form action="" autocomplete="off">
+						<!-- * Suchfeld um Movies in der Datenbank zu suchen -->
+						<input type="text" name="" id="inputText" />
 
-            <!-- * Search-Button -->
-            <button id="btnSearch" type="button">Search</button>
-          </form>
-        </section>
+						<!-- * Search-Button -->
+						<button id="btnSearch" type="button">Search</button>
+					</form>
+				</section>
 
-        <!-- * Fehlerausgabe wenn auf den Search-Button geklickt wird aber keine Eingabe im Suchfeld erfolgt ist -->
-        <div id="errormsg"></div>
+				<!-- * Fehlerausgabe wenn auf den Search-Button geklickt wird aber keine Eingabe im Suchfeld erfolgt ist -->
+				<div id="errormsg"></div>
 
-        <!-- * Container für die Sortierung der Movies -->
-        <div class="btn_box">
-          <!-- * Button für aufsteigende Sortierung -->
-          <button id="btnyearup" type="button">Year Up</button>
-          <!-- * Button für absteigende Sortierung -->
-          <button id="btnyeardown" type="button">Year Down</button>
-          <!-- * Button für aufsteigende Sortierung nach Bewertung-->
-          <button id="btnbestRate" type="button">Best Rate</button>
-        </div>
-        <!-- * Container in dem alle Movies gelistet werden -->
-        <section id="movie_container"></section>
-      </section>
-    </main>
-  </body>
+				<!-- * Container für die Sortierung der Movies -->
+				<div class="btn_box">
+					<!-- * Button für aufsteigende Sortierung -->
+					<button id="btnyearup" type="button">Year Up</button>
+					<!-- * Button für absteigende Sortierung -->
+					<button id="btnyeardown" type="button">Year Down</button>
+					<!-- * Button für aufsteigende Sortierung nach Bewertung-->
+					<button id="btnbestRate" type="button">Best Rate</button>
+				</div>
+				<!-- * Container in dem alle Movies gelistet werden -->
+				<section id="movie_container"></section>
+			</section>
+		</main>
+	</body>
 </html>
