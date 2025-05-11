@@ -14,7 +14,7 @@ function showMovies() {
         movieContainer.innerHTML = "";
 
         movies.forEach(element => {
-            // * 
+            // *
             const box = document.createElement("div");
             box.classList.add("movieBox");
             movieContainer.appendChild(box);
